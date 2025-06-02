@@ -84,12 +84,24 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.disabled = true;
 
         try {
-            // Send email using EmailJS
+            // (Fallback check: if EmailJS is not loaded (e.g. CDN blocked or not available on Vercel), log a debug message and throw an error.)
+            if (typeof emailjs === 'undefined') {
+                console.error("EmailJS is not loaded (check your CDN or EmailJS script on Vercel).");
+                showNotification("EmailJS is not loaded. Please check your EmailJS CDN or script on Vercel.", "error");
+                throw new Error("EmailJS is not loaded.");
+            }
+
+            // Send email using EmailJS (if EmailJS is misconfigured (e.g. service or template not found) on Vercel, the call below may fail.)
             await emailjs.send('service_go2volt', 'template_go2volt', {
                 from_name: formData.name,
                 from_email: formData.email,
                 message: formData.message,
                 to_email: 'go2volt@gmail.com'
+            }).catch((err) => {
+                // Fallback (or "debug") log so you can diagnose why the contact form isn't working on Vercel.
+                console.error("EmailJS send failed (check your EmailJS service & template on Vercel):", err);
+                showNotification("EmailJS send failed (check your EmailJS service & template on Vercel).", "error");
+                throw err; // re-throw so the outer catch block still resets the button.
             });
 
             // Show success message
@@ -98,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Reset form
             contactForm.reset();
         } catch (error) {
-            // Show error message
+            // Show generic error notification (or log the error further if needed)
             showNotification('Failed to send message. Please try again or contact us directly.', 'error');
             console.error('Error sending email:', error);
         } finally {

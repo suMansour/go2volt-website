@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GO2 Volt - Security Solutions</title>
+    <title>Go2Volt – Security Solutions</title>
+    <meta name="description" content="Go2Volt offers cutting-edge security solutions including CCTV, Access Control, Alarm Systems, UPS Systems, and Fire Alarm services." />
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/icon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/icon.png" sizes="32x32" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="./dist/output.css" rel="stylesheet">
     <!-- AOS CSS -->
@@ -103,7 +104,7 @@
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="text-center animate-pulse-slow">
-                            <div class="text-4xl font-bold text-accent mb-2">10+</div>
+                            <div class="text-4xl font-bold text-accent mb-2">15+</div>
                             <div class="text-text-secondary">Years Experience</div>
                         </div>
                         <div class="text-center animate-pulse-slow" style="animation-delay: 0.2s">
@@ -325,7 +326,6 @@
             
             <!-- Exclusive Distributors -->
             <div class="mb-16">
-                <h3 class="text-2xl font-semibold mb-8 text-text-primary text-center">Exclusive Distributors</h3>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-border-color hover:shadow-md transition-shadow animate-fade-in" style="animation-delay: 0.1s">
                         <img src="images/tiandy.png" alt="Tiandy" class="h-12 mx-auto mb-4 object-contain">
@@ -348,7 +348,6 @@
 
             <!-- Dealer Partners -->
             <div>
-                <h3 class="text-2xl font-semibold mb-8 text-text-primary text-center">Dealer Partners</h3>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-border-color hover:shadow-md transition-shadow animate-fade-in" style="animation-delay: 0.5s">
                         <img src="images/zkteco.png" alt="ZKTeco" class="h-12 mx-auto mb-4 object-contain">
@@ -371,7 +370,6 @@
 
             <!-- Additional Partners -->
             <div class="mt-16">
-                <h3 class="text-2xl font-semibold mb-8 text-text-primary text-center">Technology Partners</h3>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-sm border border-border-color hover:shadow-md transition-shadow animate-fade-in" style="animation-delay: 0.9s">
                         <img src="images/corning.gif" alt="Corning" class="h-12 mx-auto mb-4 object-contain">
@@ -534,8 +532,8 @@
         </div>
     </footer>
 
-    <!-- EmailJS Script -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- EmailJS Script (with fallback) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" onerror="this.onerror=null; this.src='https://unpkg.com/@emailjs/browser@3/dist/email.min.js';"></script>
     <script>
         (function() {
             emailjs.init("RHKIUyVAkpn5GmvZn");
